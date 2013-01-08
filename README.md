@@ -9,3 +9,8 @@ A price encryption/decryption library for OpenX server side real-time bidding.
 ````sh
 OpenxRtbPriceCrypter.decrypt( [Encrypted price], [Encryption key], [Integrity key] )
 ````
+
+### Install
+````sh
+gem 'openx_rtb_price_crypter', '0.0.1', :git => 'git://github.com/mcelona/openx_rtb_price_crypter.git'
+````
