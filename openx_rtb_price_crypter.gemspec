@@ -6,4 +6,5 @@ Gem::Specification.new do |s|
   s.authors     = ["Michael Celona"]
   s.email       = 'michael@nyclabs.com'
   s.files       = ["lib/openx_rtb_price_crypter.rb", "lib/string.rb"]
+  s.homepage    = "http://github.com/mcelona/openx_rtb_price_crypter"
 end
