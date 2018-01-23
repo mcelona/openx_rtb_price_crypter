@@ -19,10 +19,10 @@ class OpenxRtbPriceCrypter
       ciphertext = decoded_value[16,8]
       integritysig = decoded_value[24,4]
     
-      digest = OpenSSL::HMAC.digest(OpenSSL::Digest::Digest.new('sha1'), bin_encryption_key, initvec )
+      digest = OpenSSL::HMAC.digest(OpenSSL::Digest::SHA1.new, bin_encryption_key, initvec )
       xor = ciphertext.bytes.zip(digest.bytes).map { |x,y| (x^y).chr }.join
     
-      integrity_digest = OpenSSL::HMAC.digest(OpenSSL::Digest::Digest.new('sha1'), bin_integrity_key, xor+initvec )
+      integrity_digest = OpenSSL::HMAC.digest(OpenSSL::Digest::SHA1.new, bin_integrity_key, xor+initvec )
       integrity_digest_array = integrity_digest.bytes.to_a
       integritysig_array = integritysig.bytes.to_a
     
